@@ -1,55 +1,92 @@
-Kevin Dong
-9/23/24
+AUTHOR: Kevin Dong
+DATE  : 9/23/24
 
-LOG: 
+|PLATFORM|: 
+   ⚬ macOS, VS CODE
 
-9/23/24
-    ◦ Import provide Token class and main file.
+|COMPILE DIRECTIONS|:
+    ⚬ Compile program with provided Makefile. 
+        Executable name: run
+        ***Side note: The make file I created may be created incorrectly.
+        ***Please compile it manually if unexpected behavior occurs. Thank you!
 
-    ◦ Handling whitespace, tabs, and newline
-        > DONE
-    ◦ Handling MULOP_T
-        > DONE
-    ◦ Handling ADDOP_T
-        > DONE
-    ◦ Trying to test code with my own test case
+|RUN PROGRAM DIRECTIONS|:
+    ⚬ Must specify an input file in the command line
 
-9/25/24
-    ◦ Handling L & R PAREN
-        > DONE
-    ◦ Handling L & R BRACK
-        > DONE
-    ◦ Handling ~ , ;
-        > DONE
-    ◦ Handling & && "and" | ||
-        > &&, || DONE
-        **** Q: should I return error for '&' and '|'
-            A: Do "nothing"
+|BUGS|:
+    ⚬ No apparent/known bugs, but that does not gaurentee it will work for all cases.
 
-9/27/24
-    ◦ Handling <, <=, <-
-        DONE
-    ◦ Handling >, >=, =, ==
-        DONE
-    ◦ Handling digit->digit
-        DONE
-    ◦ Handling digit->digit->.
-        **** Q: Should we support '0.0'?
-        DONE
-
-    ◦ Handling alpha -> alpha (lowercase)
-        DONE
-        ◦ Handling alpha -> digit, alpha -> alpha
-            DONE
-    ◦ Handling reserved words
-        ◦ Plan on using a map
-            DONE
+|SOLUTION APPROACH|:
+    ⚬ Import provided code
+    ⚬ Understand the provided main file
+    ⚬ Understand the provided Token class
+    ⚬ Download and set up flex on my machine
+    ⚬ Started with the simple final states and test
+      them with my custom test case. 
+    ⚬ Look up how to handle end of file case 
+      Resource Credit: Credit: https://ftp.gnu.org/old-gnu/Manuals/flex-2.5.4/html_mono/flex.html#SEC13*/
+    ⚬ Handle the two tricky final states: ID and numbers
+    ⚬ Create look up "table" for reserved keyword 
+    ⚬ Handle comments 
+    ⚬ Run provided test case
 
 
+|LOG|:
 
+    9/23/24
+        ◦ Import provide Token class and main file.
 
-    
-    
-    
+        ◦ Handling whitespace, tabs, and newline
+            > [DONE]
+        ◦ Handling MULOP_T
+            > [DONE]
+        ◦ Handling ADDOP_T
+            > [DONE]
+        ◦ Trying to test code with my own test case
 
+    9/25/24
+        ◦ Handling L & R PAREN
+            > [DONE]
+        ◦ Handling L & R BRACK
+            > [DONE]
+        ◦ Handling ~ , ;
+            > [DONE]
+        ◦ Handling & && "and" | ||
+            > &&, || 
+                [DONE]
+            **** Q: should I return error for '&' and '|'
+                A: Do "nothing"
 
+    9/27/24
+        ◦ Handling <, <=, <-
+            [DONE]
+        ◦ Handling >, >=, =, ==
+            [DONE]
+        ◦ Handling digit->digit
+            [DONE]
+        ◦ Handling digit->digit->.
+            **** Q: Should we support '0.0'?
+            [DONE]
+
+        ◦ Handling alpha -> alpha (lowercase)
+            [DONE]
+            ◦ Handling alpha -> digit, alpha -> alpha
+                [DONE]
+        ◦ Handling reserved words
+            ◦ Plan is to use a map and return the matching enum number
+                [DONE]
+
+    9/28/24
+        ◦ Handling # comments
+            ◦ Can match the # follow by numbers, letter, whitespace, and tabs;
+            however, it just keeps going.
+                ◦ Maybe only match whitespaces and tabs
+                    DONE
+                ◦ Fails on commas in the comment (#,)
+                    DONE
+                ◦ Fails on other characters
+                    ◦ ...
+                    ◦ A comment ignores ANYTHING after it.
+                    ◦ Use a wild card
+                        [DONE]
+        ◦ Beautify code
