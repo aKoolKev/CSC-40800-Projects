@@ -5,7 +5,7 @@
            the lexical analyzer in the 
            main.cpp file, using the 
            Token class. */
-           
+
 #include <iostream>
 #include <map>
 #include <string>
@@ -96,6 +96,4 @@ ALPHA           [a-zA-Z]
 {ALPHA}+({DIGIT}*{ALPHA}*)* {return 1;} /* Requires at least one lowercase or uppercase letter followed by one or more occurrences of either as many DIGIT or as many ALPHA */
 
 <<EOF>> {return 23;} /* Handles end of file. Credit: https://ftp.gnu.org/old-gnu/Manuals/flex-2.5.4/html_mono/flex.html#SEC13*/
-
-. {cout <<" UNKNOWN <" << yytext[0] << ">" << endl; return 99;} /* For debugging and unknown tokens*/
 %%
