@@ -1,9 +1,9 @@
 ## Project 1
 
 # Objective
-• interpretation of an automata 
-• building a lexical analyzer 
-• using the lex/flex/flex++ tool. 
+- interpretation of an automata 
+- building a lexical analyzer 
+- using the lex/flex/flex++ tool. 
 
 # INSTRUCTION
 1. Run the provided `Makefile`
